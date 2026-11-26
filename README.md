@@ -51,3 +51,25 @@ PC 1
 PC 2
 
 # CARA NGETESTNYA
+jangan lupa kalian test yah dengan antar router
+R1 
+/ping 172.12.15.2
+/ping 170.12.30.2
+R2
+/ping 172.12.15.1
+/ping 170.12.30.2
+R3
+/ping 170.12.30.1
+/ping 172.12.15.2
+ping antarouter ini untuk memastikan bahwa koneksi antarrouter berjalan dengan baik dan jika sudah lalu kalian masukkan ip dhcp di pc
+PC 1
+ip dhcp
+PC 2
+ip dhcp
+dan kalian bakal mendapatkan ip dhcpnya
+langsung kalian disitu ping
+/ping 192.168.1.apalah
+/ping 192.168.2.apalah
+
+
+#KONFIGURASI NOTES
