@@ -1,1 +1,21 @@
+/system identity set name=R2-KIRI
 
+/ip address
+add address=172.12.15.2/29 interface=ether1
+add address=192.168.1.1/24 interface=ether2
+
+/ip pool
+add name=POOL-LAN1 ranges=192.168.1.2-192.168.1.254
+
+/ip dhcp-server
+add name=DHCP-LAN1 interface=ether2 address-pool=POOL-LAN1 disabled=no
+
+/ip dhcp-server network
+add address=192.168.1.0/24 gateway=192.168.1.1 dns-server=8.8.8.8
+
+/routing ospf instance
+set [find default=yes] router-id=2.2.2.2
+
+/routing ospf network
+add network=172.12.15.0/29 area=backbone
+add network=192.168.1.0/24 area=backbone
